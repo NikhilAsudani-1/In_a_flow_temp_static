@@ -381,7 +381,8 @@ function DailyLoadChart({ analyst }: { analyst: Analyst }) {
               axisLine={false}
               tickFormatter={(value) => `${value} pts`}
               width={45}
-              domain={[0, 'auto']}
+              domain={[0, 8]}
+              ticks={[0, 2, 4, 6, 8]}
             />
             <Tooltip content={<ChartTooltip />} cursor={false} />
             <ReferenceLine
@@ -556,7 +557,7 @@ function AnalystDetail({ analyst }: { analyst: Analyst }) {
   const upcomingPTO = getUpcomingPTO(analyst.calendarEvents)
 
   return (
-    <main className="flex-1 bg-background overflow-y-auto">
+    <main className="flex-1 bg-background overflow-y-scroll">
       <div className="p-6 px-7">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
